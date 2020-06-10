@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Game Puzzle</title>
+    <style>
+        #imageOne {
+            width: 150px;
+            height: 150px;
+        }
+
+        #imageTwo {
+            width: 150px;
+            height: 150px;
+        }
+
+        #imageThree {
+            width: 150px;
+            height: 150px;
+        }
+    </style>
+</head>
+<body>
+<img id="imageOne" onclick="image1();"
+     src="59356700_2288091738145968_4134691782371835904_n.jpg">
+<br>
+<img id="imageTwo" onclick="image2();"
+     src="95040784_1816968818443954_8067928471617142784_n.jpg">
+<br>
+<img id="imageThree" onclick="image3();"
+     src="95535854_2606259326329206_4654611777009483776_n%20.jpg">
+<br>
+<script>
+    img1 = "h59356700_2288091738145968_4134691782371835904_n.jpg";
+    img2 = "95040784_1816968818443954_8067928471617142784_n.jpg";
+    img3 = "95535854_2606259326329206_4654611777009483776_n%20(1).jpg";
+
+    function image1() {
+        let idImgOne = document.getElementById("imageOne");
+        if ((idImgOne).src == img1) {
+            idImgOne.src = img2;
+        } else if (idImgOne.src == img2) {
+            idImgOne.src = img3;
+        } else {
+            idImgOne.src = img1;
+        }
+        setTimeout(function image1() {
+            if ((idImgOne.src) == (idImgTwo.src) && (idImgTwo.src) == (idImgThree.src)) {
+                alert("You are Victory");
+            }
+        }, 1000);
+    }
+
+    function image2() {
+        let idImgTwo = document.getElementById("imageTwo");
+        if (idImgTwo.src == img2) {
+            idImgTwo.src = img3;
+        } else if (idImgTwo.src == img3) {
+            idImgTwo.src = img1;
+        } else {
+            idImgTwo.src = img2;
+        }
+        setTimeout(function image2() {
+            if ((idImgOne.src) == (idImgTwo.src) && (idImgTwo.src) == (idImgThree.src)) {
+                alert("You are Victory");
+            }
+        }, 1000);
+    }
+
+    function image3() {
+        let idImgThree = document.getElementById("imageThree");
+        if (idImgThree.src == img3) {
+            idImgThree.src = img1;
+        } else if (idImgThree.src == img1) {
+            idImgThree.src = img2;
+        } else {
+            idImgThree.src = img3;
+        }
+        setTimeout(function image3() {
+            if ((idImgOne.src) == (idImgTwo.src) && (idImgTwo.src) == (idImgThree.src)) {
+                alert("You are Victory");
+            }
+        }, 1000);
+    }
+    //em bị lỗi hiển thị//
+</script>
+</body>
+</html>
